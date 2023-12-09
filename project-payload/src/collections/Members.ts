@@ -36,7 +36,7 @@ const Members: CollectionConfig = {
       name: 'profilePicture',
       label: 'Profile Picture',
       type: 'upload',
-      relationTo: 'staffimages', // Sesuaikan dengan slug koleksi 'Media'
+      relationTo: 'memberimages', // Sesuaikan dengan slug koleksi 'Media'
     },
     {
       name: 'team',

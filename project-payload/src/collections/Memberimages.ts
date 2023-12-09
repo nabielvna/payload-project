@@ -9,8 +9,8 @@ const Memberimages: CollectionConfig = {
     delete: () => true,
   },
   upload: {
-    staticURL: '/media',
-    staticDir: 'media',
+    staticURL: '/member-images',
+    staticDir: 'member-images',
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
   },

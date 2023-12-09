@@ -9,8 +9,8 @@ const Staffimages: CollectionConfig = {
     delete: () => true,
   },
   upload: {
-    staticURL: '/media',
-    staticDir: 'media',
+    staticURL: '/staff-images',
+    staticDir: 'staff-images',
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
   },
