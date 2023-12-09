@@ -1,32 +1,28 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import HomePage from './home';
-import LoginPage from './login';
-import logo from '../public/logo.svg';
-import '../../project-app/style.css'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/home-page/home';
+import LoginPage from './components/login-page/login';
+import UserProfilePage from './components/user-profile-page/user-profile'
+import MemberList from './components/member-list-page/member-list';
+import '../../project-app/style.css';
 
 function App() {
+  const [isLoggedIn, setLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
+
+  const handleLogout = () => {
+    // Tambahkan logika logout Anda di sini
+  };
+
   return (
     <Router>
-      <div className="App">
-        <nav className="navbar bg-body-tertiary d-flex align-items-center">
-          <div className="container-fluid">
-            <Link to="/home" className="navbar-brand d-flex align-items-center">
-              <img src={logo} alt="Logo" width="40" height="40" className="d-inline-block align-text-center mx-2"></img>
-              UKM Golf ITS
-            </Link>
-            <Link to="/login" className="navbar-brand">
-              <button className="btn btn-outline-success" type="button">Login</button>
-            </Link>
-          </div>
-        </nav>
-
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/home" element={<HomePage />} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* Gunakan prop index untuk menentukan rute beranda */}
+        <Route index element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} />} />
+        <Route path="/login" element={<LoginPage setLoggedIn={setLoggedIn} />} />
+        <Route path="/home" element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} />} />
+        <Route path="/profile" element={<UserProfilePage />} /> 
+        <Route path="/member-list" element={<MemberList />} /> 
+      </Routes>
     </Router>
   );
 }

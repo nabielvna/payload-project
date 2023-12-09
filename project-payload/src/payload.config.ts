@@ -12,6 +12,8 @@ import Divisions from './collections/Divisions'
 import Staffs from './collections/Staffs'
 import Teams from './collections/Teams'
 import Sessions from './collections/Sessions'
+import Staffimages from './collections/Staffimages'
+import Memberimages from './collections/Memberimages'
 
 export default buildConfig({
   admin: {
@@ -28,6 +30,8 @@ export default buildConfig({
     Staffs,
     Teams,
     Sessions,
+    Staffimages,
+    Memberimages,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),

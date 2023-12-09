@@ -1,9 +1,14 @@
 import { CollectionConfig } from 'payload/types';
-import Divisions from './Divisions'
 
 const Staffs: CollectionConfig = {
   slug: 'staffs',
   auth: true,
+  access: {
+    create: () => true,
+    read: () => true,
+    update: () => true,
+    delete: () => true,
+  },
   admin: {
     useAsTitle: 'name',
   },
@@ -19,6 +24,17 @@ const Staffs: CollectionConfig = {
       label: 'Name',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'nickname',
+      label: 'Nickname',
+      type: 'text',
+    },
+    {
+      name: 'profilePicture',
+      label: 'Profile Picture',
+      type: 'upload',
+      relationTo: 'staffimages', // Sesuaikan dengan slug koleksi 'Media'
     },
     {
       name: 'division',

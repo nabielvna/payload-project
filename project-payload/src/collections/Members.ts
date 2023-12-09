@@ -7,6 +7,12 @@ const Members: CollectionConfig = {
   admin: {
     useAsTitle: 'username',
   },
+  access: {
+    create: () => true,
+    read: () => true,
+    update: () => true,
+    delete: () => true,
+  },
   fields: [
     {
       name: 'nrp',
@@ -15,16 +21,22 @@ const Members: CollectionConfig = {
       required: true,
     },
     {
-      name: 'username',
-      label: 'Username',
-      type: 'text',
-      required: true,
-    },
-    {
       name: 'name',
       label: 'Name',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'nickname',
+      label: 'Nickname',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'profilePicture',
+      label: 'Profile Picture',
+      type: 'upload',
+      relationTo: 'staffimages', // Sesuaikan dengan slug koleksi 'Media'
     },
     {
       name: 'team',
