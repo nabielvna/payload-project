@@ -106,10 +106,11 @@ export const fetchUserProfile = async (setUserProfile) => {
 
       const profilePictureURL = userData?.user.profilePicture?.url;
 
-      // Concatenate 'http://localhost:3000' with the profilePictureURL
       const fullProfilePictureURL = profilePictureURL
         ? `http://localhost:3000${profilePictureURL}`
         : null;
+
+      
 
       // Update the user profile state with the full profile picture URL
       setUserProfile( fullProfilePictureURL );

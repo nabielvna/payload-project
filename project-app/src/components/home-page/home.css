@@ -22,3 +22,12 @@
 .nav-link:hover {
     color: #000 !important;
 }
+
+.home {
+    height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: #abc0c06c;
+}
