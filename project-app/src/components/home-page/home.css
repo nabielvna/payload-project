@@ -1,33 +1,5 @@
-.navbar {
-    background-color: #abc0c06c;
-}
-
-.dropdown-toggle::after {
-    content: none !important;
-}
-
-.user-profile-image {
-    max-height: 35px;
-    border-radius: 50%;
-}
-
-.navbar .dropdown-menu a {
-    font-size: 12px; /* Sesuaikan ukuran font sesuai kebutuhan */
-}
-
-.nav-link {
-    color: #505050 !important;
-}
-
-.nav-link:hover {
-    color: #000 !important;
-}
-
 .home {
-    height: 100vh;
-}
-
-.footer {
-    margin-top: auto;
-    background-color: #abc0c06c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

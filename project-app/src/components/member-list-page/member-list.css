@@ -1,22 +1,5 @@
-.navbar {
-    background-color: #abc0c0;
-}
-
-.dropdown-toggle::after {
-    content: none !important;
-}
-
-.user-profile-image {
-    max-height: 35px;
-    border-radius: 50%;
-}
-
-.navbar .dropdown-menu a {
-    font-size: 12px; /* Sesuaikan ukuran font sesuai kebutuhan */
-}
-
-.flex-row img {
-    width: 15px;
-    height: 15px; 
-    object-fit: cover;
+.member-list {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

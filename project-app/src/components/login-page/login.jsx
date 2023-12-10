@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
-import logo from '../../../public/logo.svg';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { NavbarComponent, Footer} from '../page-components/all-components';
 import './login.css';
 import { checkLoggedInStatus, loginUser, logoutUser } from '../../functions/auth';
 
@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Login";
+    document.title = 'Login';
     checkLoggedInStatus(setLoggedIn, setUserName);
   }, []);
 
@@ -36,39 +36,9 @@ function Login() {
     loginUser(userType, email, password, setEmail, setPassword, setLoggedIn, setUserName);
   };
 
-  const handleLogout = () => {
-    logoutUser(setLoggedIn, setUserName);
-  };
-
   return (
     <div className="Login">
-      <Navbar expand="lg" className="d-flex align-items-center px-5">
-        <Navbar.Brand as={Link} to="/home" className="d-flex align-items-center">
-          <img src={logo}
-            alt="Golf ITS"
-            width="45"
-            height="45"
-            className="d-inline-block align-text-center mx-2"
-          />
-          <span className='mt-1'>
-            Golf ITS
-          </span>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/member-list">
-              Events
-            </Nav.Link>
-            <Nav.Link as={Link} to="/member-list">
-              News
-            </Nav.Link>
-            <Nav.Link as={Link} to="/member-list">
-              About Us
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <NavbarComponent isLoggedIn={isLoggedIn} userName={userName} />
 
       <div className="container mt-5">
         <div className="row justify-content-center">
